@@ -1,0 +1,240 @@
+/* index.css - gradient + glass theme */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root{
+  --grad-start: #6a11cb;
+  --grad-end: #2575fc;
+  --glass-light: rgba(255,255,255,0.15);
+  --card-bg: rgba(255,255,255,0.9);
+}
+
+body {
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--grad-start), var(--grad-end));
+  color: #0f172a;
+}
+
+/* navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: space-between;
+}
+.brand { color: white; font-weight: 700; font-size: 20px; }
+.links a { margin: 0 8px; color: rgba(255,255,255,0.95); text-decoration: none; font-weight:600; }
+.auth a, .auth .user-name { color: white; margin-right: 10px; }
+.btn { background: white; color: #6a11cb; padding: 8px 12px; border-radius: 10px; border:none; cursor:pointer; }
+.btn.small { padding: 6px 10px; font-size: 0.9rem; }
+
+/* containers and page layout */
+.container { max-width: 1100px; margin: 0 auto; padding: 18px; }
+.page-container { max-width: 1000px; margin: 22px auto; padding: 0 16px; color: white; text-align: center; }
+.page-title { font-size: 2rem; margin-bottom: 12px; font-weight:700; color: white; }
+
+/* hero/home */
+.home-tagline { color: rgba(255,255,255,0.95); margin-bottom: 18px; }
+.home-buttons { display:flex; gap:12px; justify-content:center; margin-bottom: 18px; }
+
+/* auth card */
+.auth-container {
+  width: 380px;
+  padding: 36px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 30px rgba(2,6,23,0.4);
+  color: white;
+  margin: 110px auto;
+}
+.auth-title { font-size: 1.6rem; margin-bottom: 16px; font-weight:700; color:white; text-align:center; }
+.auth-input { width:100%; padding: 12px 14px; margin-bottom:10px; border-radius:10px; border:none; outline:none; background: rgba(255,255,255,0.95); }
+.auth-btn { width:100%; padding: 12px; border-radius:10px; background:white; color: var(--grad-start); border:none; font-weight:700; cursor:pointer; }
+.auth-link { color: white; margin-top:10px; text-align:center; }
+
+/* cards */
+.card, .form-card, .note-view-card, .profile-card, .info-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.9));
+  border-radius: 14px;
+  padding: 16px;
+  margin: 12px 0;
+  color: #0f172a;
+  box-shadow: 0 8px 20px rgba(2,6,23,0.18);
+}
+
+/* notes grid */
+.notes-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+/* Note card colors */
+.note-card {
+  padding: 16px;
+  border-radius: 12px;
+  text-align: left;
+  color: #1f1f1f;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* Pastel Aqua */
+.note-card:nth-child(1n) {
+  background: rgba(173, 239, 239, 0.95);
+}
+
+/* Pastel Blue */
+.note-card:nth-child(2n) {
+  background: rgba(173, 215, 239, 0.95);
+}
+
+/* Pastel Mint */
+.note-card:nth-child(3n) {
+  background: rgba(173, 239, 215, 0.95);
+}
+
+/* Pastel Yellow */
+.note-card:nth-child(4n) {
+  background: rgba(239, 239, 173, 0.95);
+}
+
+/* Pastel Peach */
+.note-card:nth-child(5n) {
+  background: rgba(239, 201, 173, 0.95);
+}
+
+/* Pastel Lavender */
+.note-card:nth-child(6n) {
+  background: rgba(215, 173, 239, 0.95);
+}
+
+.note-card h3 { margin-bottom: 8px; }
+.note-actions { display:flex; gap:8px; justify-content:flex-end; margin-top:8px; }
+.card-btn { background:rgba(255, 255, 255, 0.936); color:var(--grad-start); padding:6px 10px; border-radius:8px; text-decoration:none; font-weight:700; }
+
+/* floating create button */
+.floating-btn {
+  position: fixed;
+  right: 26px;
+  bottom: 26px;
+  width:56px;
+  height:56px;
+  border-radius: 50%;
+  background: white; color: var(--grad-start);
+  display:flex; align-items:center; justify-content:center; font-size:28px; text-decoration:none;
+  box-shadow: 0 8px 20px rgba(2,6,23,0.25);
+}
+
+/* Note card buttons */
+.note-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* DELETE BUTTON (Pastel Red) */
+.delete-btn {
+  background: #ffb3b3;
+  color: #3a3a3a;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s ease-in-out;
+}
+
+.delete-btn:hover {
+  background: #ff8a8a;
+}
+
+/* VIEW BUTTON (Pastel Blue) */
+.view-btn {
+  background: #a7d8ff;
+  color: #1e1e1e;
+  padding: 8px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.view-btn:hover {
+  background: #7fc8ff;
+}
+
+/* EDIT BUTTON (Pastel Green) */
+.edit-btn {
+  background: #b5f4c1;
+  color: #1e1e1e;
+  padding: 8px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.edit-btn:hover {
+  background: #95e8a0;
+}
+
+/* Button group wrapper */
+.button-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+/* small responsive tweaks */
+@media (max-width:720px) {
+  .nav-inner { padding: 12px; }
+  .auth-container { width: 92%; margin-top: 80px; }
+  .page-title { font-size: 1.4rem; }
+}
+
+.home-buttons {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.home-btn {
+  padding: 14px 28px;
+  border-radius: 14px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: white;
+
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  transition: 0.25s ease-in-out;
+}
+
+/* Hover effect: soft glow + gradient */
+.home-btn:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, var(--grad-start), var(--grad-end));
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
